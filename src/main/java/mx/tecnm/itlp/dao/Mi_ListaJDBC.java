@@ -33,7 +33,10 @@ public class Mi_ListaJDBC {
 		return conexion.query(sql, new MiListaRM(),id );
 	}
 	
-
+	public void EliminardeMiLista(int idperfilusuarios,int idpeliculas){
+		String sql="Delete FROM mi_lista WHERE perfiles_usuarios_id=? AND peliculas_id=?";
+		conexion.update(sql,idperfilusuarios,idpeliculas);
+	}
 	
 	
 	
