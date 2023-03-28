@@ -41,7 +41,7 @@ public class Mi_ListaREST {
 	    	}
 	    }
 
-		@GetMapping("/{id}")
+		@GetMapping("/lista/{id}")
 		public ResponseEntity<?> consultarLista(@PathVariable("id") int id){
 		try {
 			List<Mi_lista_response> resultado= repo.consultarListaIdPerfil(id);
@@ -57,7 +57,16 @@ public class Mi_ListaREST {
 		repo.EliminardeMiLista(idperfilusuarios,idpeliculas);
 		}
 	 
-	   
+		@GetMapping("/lista/cantidad_peliculas/{id}")
+		public int consultarListaCantidad(@PathVariable("id") int id){
+		try {
+			int resultado= repo.CantidadPeliculas(id);
+			return resultado;
+			}
+			catch (Exception e){
+				return 0;
+			}
+		}
 
 	   
 	   
