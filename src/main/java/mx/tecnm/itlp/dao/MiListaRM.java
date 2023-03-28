@@ -19,6 +19,7 @@ public class MiListaRM implements RowMapper<Mi_lista_response>{
         mi_lista.setSinopsis(rs.getString("sinopsis"));
 		mi_lista.setProductora(rs.getString("productora"));
 		mi_lista.setTamano_descarga(rs.getString("tamano_descarga"));
+		mi_lista.setPerfiles_usuarios_id(rs.getInt("perfiles_usuarios_id"));
 		
 		return mi_lista;
 

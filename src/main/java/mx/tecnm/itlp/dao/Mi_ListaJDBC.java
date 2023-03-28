@@ -26,7 +26,7 @@ public class Mi_ListaJDBC {
 	}
 
 	public List<Mi_lista_response> consultarListaIdPerfil(int id) {
-		String sql = "SELECT p.titulo, p.sinopsis, p.productora, p.tamano_descarga\r\n"
+		String sql = "SELECT p.titulo, p.sinopsis, p.productora, p.tamano_descarga, m.perfiles_usuarios_id\r\n"
 				+ "FROM mi_lista AS m\r\n"
 				+ "JOIN peliculas AS p ON p.id=m.peliculas_id\r\n"
 				+ "WHERE p.activo = 1 AND m.perfiles_usuarios_id=?";

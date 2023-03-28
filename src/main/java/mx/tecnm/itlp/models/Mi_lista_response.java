@@ -5,7 +5,7 @@ public class Mi_lista_response {
     private String sinopsis;
 	private String productora;
 	private String tamano_descarga;
-    private String perfiles_usuarios_id;
+    private int perfiles_usuarios_id;
     
     public String getTitulo() {
         return titulo;
@@ -31,10 +31,10 @@ public class Mi_lista_response {
     public void setTamano_descarga(String tamano_descarga) {
         this.tamano_descarga = tamano_descarga;
     }
-    public String getPerfiles_usuarios_id() {
+    public int getPerfiles_usuarios_id() {
         return perfiles_usuarios_id;
     }
-    public void setPerfiles_usuarios_id(String perfiles_usuarios_id) {
+    public void setPerfiles_usuarios_id(int perfiles_usuarios_id) {
         this.perfiles_usuarios_id = perfiles_usuarios_id;
     }
     
