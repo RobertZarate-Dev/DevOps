@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 import mx.tecnm.itlp.dao.PeliculasRM;
 import mx.tecnm.itlp.models.Historial;
 import mx.tecnm.itlp.models.Peliculas;
-
+import java.time.LocalDate;
 
 
 @Repository
@@ -25,11 +25,15 @@ public class HistorialJDBC {
 	}
 	
 	
-	public List<Historial> consultarHistorialID(int id_pelicula,int id_usuario){
+	public List<Historial> consultarHistorialByID(int id_pelicula,int id_usuario){
 		String sql = "SELECT * FROM historial WHERE perfiles_usuarios_id=? AND peliculas_id=?; ";
 		return conexion.query(sql, new HistorialRM(),id_usuario,id_pelicula );
 	
 	}
+	
+
+	
+	
 
 	
 	
