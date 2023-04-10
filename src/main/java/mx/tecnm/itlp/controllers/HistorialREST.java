@@ -46,20 +46,25 @@ public class HistorialREST {
 	   @GetMapping("/historial/{idUsuario}/{idPelicula}")
 		public ResponseEntity<?> consultarActorPeliculaId(@PathVariable("idUsuario") int idUsuario,@PathVariable("idPelicula") int idPelicula){
 		try {
-			List<Historial> resultado= repo.consultarHistorialID(idPelicula,idUsuario);
+			List<Historial> resultado= repo.consultarHistorialByID(idPelicula,idUsuario);
 			return new ResponseEntity<List<Historial>>(resultado, HttpStatus.OK);
 			}
 			catch (Exception e){
 				return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 			}
 		}
-	
 	   
-	
-	   
-
-	   
-	   
-	
+	   @PutMapping("/historial")
+	   public ResponseEntity<?> actualizarHistorial(@RequestBody Historial historial){
+		   try {
+			   System.out.print(historial);
+	            repo.actualizarTiempoAvanceHistorial(historial);
+	            
+	            return new ResponseEntity<Void>(HttpStatus.CREATED);
+	        } catch (Exception e) {
+	        	System.out.print(e);
+	            return new ResponseEntity<Void>(HttpStatus.CONFLICT);
+	        }
+	   }
 	   
 }
