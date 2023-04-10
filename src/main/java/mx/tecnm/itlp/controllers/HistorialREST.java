@@ -54,6 +54,17 @@ public class HistorialREST {
 			}
 		}
 	   
-
+	   @PutMapping("/historial")
+	   public ResponseEntity<?> actualizarHistorial(@RequestBody Historial historial){
+		   try {
+			   System.out.print(historial);
+	            repo.actualizarTiempoAvanceHistorial(historial);
+	            
+	            return new ResponseEntity<Void>(HttpStatus.CREATED);
+	        } catch (Exception e) {
+	        	System.out.print(e);
+	            return new ResponseEntity<Void>(HttpStatus.CONFLICT);
+	        }
+	   }
 	   
 }
