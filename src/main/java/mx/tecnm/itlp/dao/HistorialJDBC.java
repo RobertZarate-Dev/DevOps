@@ -31,7 +31,12 @@ public class HistorialJDBC {
 	
 	}
 	
-
+	public void actualizarTiempoAvanceHistorial(Historial h) {
+		LocalDate fechaActual = LocalDate.now();
+		System.out.print(fechaActual);
+		String sql = "UPDATE historial SET tiempo_avance= ?, fecha=? WHERE id=?";
+	 conexion.update(sql,h.getTiempo_avance(),fechaActual,h.getId());
+	}
 	
 	
 
