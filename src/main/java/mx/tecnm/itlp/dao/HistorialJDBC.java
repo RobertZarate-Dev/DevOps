@@ -19,7 +19,7 @@ public class HistorialJDBC {
 	JdbcTemplate conexion;
 	
 	// \"2022-11-12\",\"01:18:58\",6,1
-	public void insertarHistorial(Historial h) {
+	public void insertarH(Historial h) {
 		String sql = "INSERT INTO historial (id,fecha,tiempo_avance,perfiles_usuarios_id,peliculas_id) VALUES(?,?,?,?,?)";
 		conexion.update(sql, h.getId(), h.getFecha(),h.getTiempo_avance(),h.getPerfiles_usuarios_id(),h.peliculas_id);
 	}

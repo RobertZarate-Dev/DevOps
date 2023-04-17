@@ -30,9 +30,9 @@ public class HistorialREST {
 	    HistorialJDBC repo;
 	   
 	   @PostMapping("/historial")
-	    public ResponseEntity<?> insertarH(@RequestBody Historial h) {
+	    public ResponseEntity<?> insertarHistorial(@RequestBody Historial h) {
 	    	try {
-	    	repo.insertarHistorial(h);
+	    	repo.insertarH(h);
 	    	return new ResponseEntity<Void>(HttpStatus.CREATED);
 	    	
 	    	} catch (Exception e) {
@@ -64,6 +64,7 @@ public class HistorialREST {
 	        } catch (Exception e) {
 	        	System.out.print(e);
 	            return new ResponseEntity<Void>(HttpStatus.CONFLICT);
+	            //asdasd
 	        }
 	   }
 	   
